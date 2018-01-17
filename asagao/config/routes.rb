@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get "about" => "top#about", as: "about"
   get "lesson/:action(/:name)" => "lesson"
   
-  resources :members
+  resources :members do
+    collection {get "search"}
+  end
 end
